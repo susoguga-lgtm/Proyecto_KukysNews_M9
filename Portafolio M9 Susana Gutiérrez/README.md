@@ -10,9 +10,9 @@ Específicamente, la aplicación busca:
 4. **Ofrecer una experiencia de usuario fluida e interactiva** mediante el renderizado dinámico del lado del servidor con Handlebars, optimizado con estilos e interacciones personalizadas en CSS3.
 
 ## 👤 Autoría
-- **Desarrolladora:** Susana Gutiérrez 
-- **Módulo:** Proyecto Final M9- Portafolio de Desarrollo Full Stack
-- **Especialidad:** "Desarrolladora Full Stack JavaScript"
+- **Desarrolladora:** Susana Gutiérrez (Kuky)
+- **Módulo:** Proyecto Final M9- Portafolio de Desarrollo Backend
+- **Especialidad:** Web Development & Full-Stack JavaScript
 
 ## 🔗 URL del Repositorio
 - **Repositorio Oficial en GitHub:** https://github.com/susoguga-lgtm/Proyecto_KukysNews_M9.git
@@ -48,7 +48,7 @@ A continuación se presentan capturas del portal operando en tiempo real:
 
 ### 3. Artículo Completo y Control Documental
 *Lectura fluida y botones de administración protegidos por rol de sesión.*
-![Detalle de la Noticia](./screenshots/Captura_de_pantalla_(551).png)
+![Detalle de la Noticia](./screenshots/Captura_de%20_pantalla_(536).png)
 
 ---
 

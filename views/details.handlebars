@@ -16,16 +16,38 @@
                         {{noticia.contenido}}
                     </div>
                     
-                      {{#if user}} 
-                      <div class="mt-4 pt-4 border-top d-flex justify-content-center gap-2">
-                          <a href="/noticias/editar/{{noticia.id}}" class="btn btn-warning px-4 fw-bold">Editar</a>
-    
-                          <form action="/noticias/eliminar/{{noticia.id}}" method="POST" onsubmit="return confirm('¿Estás segura de eliminar esta noticia?')">
-                              <button type="submit" class="btn btn-danger px-4 fw-bold">Eliminar</button>
-                          </form>
-                      </div>
-                      {{/if}}
+                    {{#if user}}
+                    <div class="mt-4 pt-4 border-top d-flex justify-content-center gap-2">
+                        <a href="/noticias/editar/{{noticia.id}}" class="btn btn-editar-rosa btn-admin-special px-4 fw-bold">Editar</a>
+
+                        <form action="/noticias/eliminar/{{noticia.id}}" method="POST" onsubmit="return confirm('¿Estás segura de eliminar esta noticia?')">
+                            <button type="submit" class="btn btn-eliminar-fuccia btn-admin-special px-4 fw-bold">Eliminar</button>
+                        </form>
+                    </div>
+                    {{/if}}
                       
+                    <div class="mt-5 border-top pt-4">
+                        <h4 class="fw-bold text-dark">Deja tu comentario</h4>
+                        <form action="/noticias/{{noticia.id}}/comentario" method="POST">
+                            <textarea name="texto" class="form-control mb-3" rows="3" required placeholder="Escribe aquí tu opinión..."></textarea>
+                            <button type="submit" class="btn btn-primary px-4 fw-bold">Enviar comentario</button>
+                        </form>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5 class="fw-bold text-dark">Opiniones de la comunidad:</h5>
+                        {{#if noticia.comentarios}}
+                            {{#each noticia.comentarios}}
+                                <div class="card mb-2 bg-light border-0">
+                                    <div class="card-body py-2">
+                                        <p class="mb-0 text-secondary">{{this.texto}}</p>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        {{else}}
+                            <p class="text-muted small">Aún no hay comentarios. ¡Sé el primero en opinar!</p>
+                        {{/if}}
+                    </div>
                     <div class="mt-5 text-center border-top pt-4">
                         <a href="/" class="btn btn-outline-primary px-5 rounded-pill">Volver al Inicio</a>
                     </div>

@@ -64,36 +64,3 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
 }
-
-
-/* ESTILOS PARA BOTONES DE ADMINISTRACIÓN */
-/* Clase general para el efecto de 'subida' al pasar el mouse */
-.btn-admin-special {
-  transition: all 0.3s ease-in-out; /* Una transición suavecita */
-  border: none !important; /* Les quitamos bordes por defecto */
-}
-
-.btn-admin-special:hover {
-  transform: translateY(-5px); /* Sube un poco */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Una sombrita para resaltar el efecto */
-}
-
-/* Color Rosa para Editar */
-.btn-editar-rosa {
-  background-color: #ac688b; /* Un rosa HotPink súper vibrante */
-  color: white; /* Texto blanco */
-}
-
-.btn-editar-rosa:hover {
-  background-color: #FF1493; /* Un rosa DeepPink más oscuro al pasar mouse */
-}
-
-/* Color Fuccia Chillon para Eliminar */
-.btn-eliminar-fuccia {
-  background-color: #FF00FF; /* Un Fuccia/Magenta puro y eléctrico */
-  color: white; 
-}
-
-.btn-eliminar-fuccia:hover {
-  background-color: #a43aeb; 
-}

@@ -1,7 +1,6 @@
 import News from "../models/News.js"; 
-import Comment from "../models/Comment.js";
 
-//Agregamos la lógica para crear una noticia en la base de datos
+//Agregamos la lógica para crear una noticiaen la base de datos
 export const createNews = async (titulo, contenido, categoria, userId) => {
     try {
         const nuevaNoticia = await News.create({
@@ -31,18 +30,9 @@ export const getAllNews = async () => {
 //Agregamos la lógica para obtener una noticia por su ID
 export const getNewsById = async (id) => {
     try {
-        const noticia = await News.findByPk(id, {
-            include: [
-                {
-                model: Comment,
-                as: "comentarios"
-            }
-        ]
-        });
+        const noticia = await News.findByPk(id);
         return noticia;
-
     } catch (error) {
-        
         throw new Error("Error al obtener los detalles de la noticia");
     }
 };

@@ -6,14 +6,14 @@ import authRoutes from "./routes/authRoutes.js";
 import cookieParser from "cookie-parser";
 import { checkUser } from "./middlewares/authMiddleware.js";
 import newsRoutes from "./routes/newsRoutes.js";
-import commentRoutes from "./routes/commentRoutes.js";
 import { getAllNews } from "./services/newsService.js";
 
 
 // IMPORTACIONES PARA LA BASE DE DATOS Y MODELOS
 import { createDatabaseIfNotExists, testConnection, } from "./config/database.js";
 import sequelize from "./config/database.js";
-import "./models/index.js";
+
+import { User, News, Comment } from "./models/index.js";
 
 // Configuración necesaria para usar __dirname con ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -44,14 +44,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/auth", authRoutes);
 app.use(cookieParser());
 app.use(checkUser);
-
-// RUTAS
-app.use("/auth", authRoutes);
 app.use("/noticias", newsRoutes);
-// ¡Aquí enchufamos el cable de los comentarios al servidor!
-app.use(commentRoutes);
+
 app.get("/", async (req, res) => {
     try {
         const noticias = await getAllNews();
